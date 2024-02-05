@@ -41,6 +41,7 @@ export async function POST(req) {
     });
   }
 
+  // Read file content
   const byteData = await file.arrayBuffer();
   const buffer = Buffer.from(byteData);
 
