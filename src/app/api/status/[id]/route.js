@@ -3,6 +3,7 @@ import sha256 from "crypto-js/sha256";
 import axios from "axios";
 import dbConnect from "@/lib/dbConnect";
 import Forms from "@/models/formSubmit";
+import { URL } from "../../../../../URL";
 
 // Define updateFormDataStatus function outside of the POST function
 async function updateFormDataStatus(data, status, merchantId, transactionId) {
@@ -44,12 +45,12 @@ export async function POST(req, res) {
     // Use the updateFormDataStatus function
     if (response.data.code === "PAYMENT_SUCCESS") {
       await updateFormDataStatus(data, "success", merchantId, transactionId);
-      return NextResponse.redirect("http://localhost:3000/success", {
+      return NextResponse.redirect(`${URL}/success`, {
         status: 301
       });
     } else {
       await updateFormDataStatus(data, "failed", merchantId, transactionId);
-      return NextResponse.redirect("http://localhost:3000/failure", {
+      return NextResponse.redirect(`${URL}/failure`, {
         status: 301
       });
     }

@@ -5,6 +5,7 @@ import sha256 from "crypto-js/sha256";
 import { redirect } from "next/navigation";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+import { URL } from "../../../URL";
 
 const Pay = () => {
   const router = useRouter();
@@ -17,7 +18,7 @@ const Pay = () => {
     // Fetch submitted details when the component mounts
     const fetchSubmittedDetails = async () => {
       try {
-        const response = await axios.get("/api/data");
+        const response = await axios.get(`${URL}/api/data`);
         const formDataList = response.data.formDataList;
 
         // Assuming you want the details of the latest submission
@@ -46,9 +47,9 @@ const Pay = () => {
       merchantTransactionId: transactionid,
       merchantUserId: "MUID-" + uuidv4().toString(36).slice(-6),
       amount: 10000,
-      redirectUrl: `http://localhost:3000/api/status/${transactionid}`,
+      redirectUrl: `${URL}/api/status/${transactionid}`,
       redirectMode: "POST",
-      callbackUrl: `http://localhost:3000/api/status/${transactionid}`,
+      callbackUrl: `${URL}/api/status/${transactionid}`,
       mobileNumber: "9999999999",
       paymentInstrument: {
         type: "PAY_PAGE"

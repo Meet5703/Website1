@@ -2,6 +2,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { URL } from "../../../URL";
 
 const Admin = () => {
   const [formDataList, setFormDataList] = useState([]);
@@ -19,7 +20,7 @@ const Admin = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("/api/data");
+      const response = await fetch(`${URL}/api/data`);
       if (response.ok) {
         const data = await response.json();
         if (data.success) {
@@ -61,7 +62,7 @@ const Admin = () => {
 
   const handleDelete = async (formDataId) => {
     try {
-      const response = await axios.delete(`/api/data/${formDataId}`);
+      const response = await axios.delete(`${URL}/api/data/${formDataId}`);
 
       // If deletion was successful, update the local state
       if (response.data.success) {
