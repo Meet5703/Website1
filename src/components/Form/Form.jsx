@@ -4,6 +4,7 @@
 // ./src/app/forms/page.jsx
 import React, { useEffect, useRef, useState } from "react";
 import "./text.css";
+import { URL } from "../../../URL";
 const MAX_VIDEO_SIZE_MB = 30;
 const MAX_VIDEO_DURATION_SECONDS = 30;
 
@@ -81,7 +82,7 @@ const Form = () => {
     }
 
     try {
-      const res = await fetch("/api/data", {
+      const res = await fetch(`${URL}/api/data`, {
         method: "POST",
         body: data // Use the FormData object directly
       });
