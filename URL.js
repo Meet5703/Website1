@@ -1,1 +1,1 @@
-export const URL = "https://eifpebollywood.vercel.app";
+export const URL = "https://website1-ten-livid.vercel.app/";
