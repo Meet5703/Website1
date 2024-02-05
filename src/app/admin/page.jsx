@@ -2,8 +2,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { URL } from "../../../URL";
-
+import URL from "../../../URL";
 const Admin = () => {
   const [formDataList, setFormDataList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
