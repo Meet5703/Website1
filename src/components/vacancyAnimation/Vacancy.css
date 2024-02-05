@@ -1,0 +1,45 @@
+.vacancy-container {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+}
+
+.animated-text {
+  flex: 1;
+  text-align: center;
+  animation: moveLeft 20s linear infinite, changeColor 30s linear infinite;
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes changeColor {
+  0% {
+    color: rgb(0, 255, 200);
+    text-shadow: 0 0 5px rgb(0, 255, 200);
+  }
+  25% {
+    color: rgb(0, 238, 255);
+    text-shadow: 0 0 5px rgb(0, 225, 255);
+  }
+  50% {
+    color: rgb(0, 255, 0);
+    text-shadow: 0 0 5px rgb(0, 255, 0);
+  }
+  75% {
+    color: rgb(251, 255, 0);
+    text-shadow: 0 0 5px rgb(255, 251, 0);
+  }
+  100% {
+    color: rgb(255, 0, 255);
+    text-shadow: 0 0 5px rgb(250, 2, 217);
+  }
+}

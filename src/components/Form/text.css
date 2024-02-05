@@ -1,0 +1,31 @@
+form label,
+form h1 {
+  text-shadow: 0 0 4px rgb(0, 195, 255);
+  color: rgb(9, 27, 87);
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: url(../../assets/egl.jpg);
+    background-size: cover;
+  }
+}
+
+@media (min-width: 769px) {
+  body {
+    background-color: #cedfef;
+  }
+}
+.bgcstm {
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  background-image: url(../../assets/GettyImages-138596308-ad71719.webp);
+}
+
+.bgblr {
+  backdrop-filter: blur(10px);
+  padding: 10%;
+  background-color: rgba(255, 255, 255, 0.479);
+  border-radius: 2%;
+}
